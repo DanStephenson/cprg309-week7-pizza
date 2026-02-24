@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slice &amp; Dice Pizza</title>
+  <link rel="stylesheet" href="pizza.css">
+</head>
+<body>
+  <main>
+
+    <header>
+      <span class="logo">🍕</span>
+      <h1>Slice &amp; Dice Pizza</h1>
+      <p class="tagline">CPRG 309 &mdash; Week 7 &mdash; Functions Demo</p>
+    </header>
+
+    <form novalidate>
+
+      <fieldset>
+        <legend>Build Your Order</legend>
+
+        <div class="field">
+          <label for="size">Pizza Size</label>
+          <select id="size">
+            <option value="small">Small (10") — $8</option>
+            <option value="medium" selected>Medium (12") — $12</option>
+            <option value="large">Large (16") — $16</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="toppings">Number of Toppings</label>
+          <input type="number" id="toppings" value="1" min="0" max="10" step="1">
+          <p class="field-hint">Each topping $1.50 &nbsp;·&nbsp; Max 10</p>
+        </div>
+
+      </fieldset>
+
+      <!-- DEAL SELECTOR -->
+      <fieldset>
+        <legend>Choose a Deal</legend>
+
+        <div class="deal-grid">
+          <div class="deal-option">
+            <input type="radio" name="deal" id="deal-regular" value="regular" checked>
+            <label for="deal-regular">
+              <span class="deal-name">Regular</span>
+              Full price
+            </label>
+          </div>
+          <div class="deal-option">
+            <input type="radio" name="deal" id="deal-student" value="student">
+            <label for="deal-student">
+              <span class="deal-name">Student</span>
+              10% off
+            </label>
+          </div>
+          <div class="deal-option">
+            <input type="radio" name="deal" id="deal-family" value="family">
+            <label for="deal-family">
+              <span class="deal-name">Family</span>
+              Buy 2, save $4
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+
+    </form>
+
+    <!-- RESULT — always visible, values updated by JavaScript -->
+    <section id="result">
+      <h2>Your Order</h2>
+
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Pizza size</th>
+            <td id="displaySize">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Toppings cost</th>
+            <td id="displayToppingCost">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Before deal</th>
+            <td id="displayBaseTotal">—</td>
+          </tr>
+          <tr>
+            <th scope="row">Deal</th>
+            <td id="displayDeal">—</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Total</th>
+            <td id="displayFinalTotal">—</td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </section>
+
+  </main>
+</body>
+</html>
